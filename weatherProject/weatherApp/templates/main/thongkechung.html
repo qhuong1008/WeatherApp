@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forcast</title>
+    
+    <link rel="stylesheet" href="./static/base.css?version=2">
+    <link rel="stylesheet" href="./static/main.css?version=2">
+    <script src="./static/main.js"></script>
+
+</head>
+<body>
+    <div class="header">
+        <div class="header-navbar-list">
+            <div class="header-navbar-item">
+                <a href="trangchu" class="">
+                    <label class="header-navbar-name">Thống kê thời tiết</label>
+                </a>
+            </div>
+            <ul class="header-navbar-options">
+              <a href="trangchu" class="header-option-item-link">
+                  <li class="header-option-item">Trang chủ</li>
+              </a>
+              <a href="thongkechung" class="header-option-item-link">
+                  <li class="header-option-item">Thống kê chung</li>
+              </a>
+              <a href="thongkengay" class="header-option-item-link">
+                  <li class="header-option-item">Thống kê ngày</li>
+              </a>
+              <a href="thongkethang" class="header-option-item-link">
+                  <li class="header-option-item">Thống kê tháng</li>
+              </a>
+              <a href="thongkenam" class="header-option-item-link">
+                  <li class="header-option-item">Thống kê năm</li>
+              </a>
+            </ul>
+           
+          </ul>
+        </div>
+    </div>
+    <div class="app-container">
+        <div class="content">
+            <div class="select-wrapper">
+              <form                
+                action="ketquachung"
+                method="post">
+                {% csrf_token %} 
+                <div class="title">Chọn thông tin cần xem</div>
+                <div class="custom-select-thongkechung"> 
+                  
+                  <div class="custom-select-item">
+                    <select id="month" name="month" onchange="comboMonthselect(this)" >
+                      <option value="0">Tháng</option>   
+                      <option value="1" name="1">1</option>   
+                      <option value="2" name="2">2</option>   
+                      <option value="3" name="3">3</option>
+                      <option value="4" name="4">4</option>   
+                      <option value="5" name="5">5</option>   
+                      <option value="6" name="6">6</option>   
+                      <option value="7" name="7">7</option>
+                      <option value="8" name="9">8</option>   
+                      <option value="9" name="9">9</option>   
+                      <option value="10" name="10">10</option>   
+                      <option value="11" name="11">11</option>
+                      <option value="12" name="12">12</option>
+                   
+                    </select>
+                  </div>
+               
+                  <div class="custom-select-item">
+                      <select id="year" name="year">
+                        <option value="0">Năm</option>
+                        <option value="2020" name="2020">2020</option>
+                        <option value="2021" name="2021">2021</option>
+                        <option value="2022" name="2022">2022</option>
+                        
+                      </select>
+                  </div>
+                  <div class="custom-select-item">
+                    <select id="tkType" name="tkType" onchange="comboTypeselect(this)">
+                      <option value="0">Loại</option>
+                      <option value="TEMP_2M" name="TEMP_2M">Nhiệt độ</option>
+                      <option value="DEW_FROST" name="DEW_FROST">Điểm sương</option>
+                      <option value="HUMI_2M" name="HUMI_2M">Độ ẩm</option>
+                      <option value="PRECTOTCORR" name="PRECTOTCORR">Lượng mưa</option>
+                      <option value="SURF_PRESS" name="SURF_PRESS">Áp suất bề mặt</option>
+                      <option value="WIND_SPEED" name="WIND_SPEED">Tốc độ gió</option>
+                      <option value="WIND_DIREC" name="WIND_DIREC">Hướng gió</option>
+                   
+                    </select>
+                </div>
+                </div>           
+                
+                <button type="submit" class="btn btn-primary" onclick="xulithongkejs()">Xem thông tin</button>
+              </form>
+                  
+              </div> 
+          
+            
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

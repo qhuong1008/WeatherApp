@@ -1,0 +1,82 @@
+:root {
+    --primary-color: #313050;
+    --sub-color: #5A5973;
+    --bar-color: #1D1D30;
+    --button-color: #1B4DE4;
+}
+
+* {
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn {
+    display: block;
+    width: 150px;
+    height: auto;
+    border-radius: 20px;
+    background-color: var(--button-color);
+    border-style: none;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.ruler {
+    display: block;
+    background-color: rgb(161, 154, 154);
+    height: 100%;
+    width: 6px;
+    margin-top: 20px;
+}
+
+.horizontal-ruler {
+    display: block;
+    width: 90%;
+    height: 2px;
+    background-color: rgb(177, 172, 172);
+    margin: auto;
+}
+
+.full-horizontal-ruler {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(177, 172, 172);
+    margin: auto;
+}
+
+table {
+    /* display: block; */
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 115%;
+    overflow: auto;
+    width: 100%;
+}
+th {
+    background-color: rgba(169, 150, 187, 0.635);
+    color: white;
+    font-weight: normal;
+    padding: 10px 0;
+    text-align: center;
+}
+td {
+    background-color: rgb(238, 238, 238);
+    color: rgb(111, 111, 111);
+    padding: 20px 0;
+}
+  
+  
