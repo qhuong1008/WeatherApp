@@ -180,8 +180,11 @@ def thongKeQuy(id_PT, _quy, _Year, Type_PT):
     data_quy_M = df[(df['ID'] == id_PT) & (df['YEAR'] == _Year) & (df['MO'] == _Mo_M)]
     data_quy_E = df[(df['ID'] == id_PT) & (df['YEAR'] == _Year) & (df['MO'] == _Mo_E)]
 
-    ketqua = data_quy_S.append(data_quy_M)
-    ketqua = ketqua.append(data_quy_E)
+    # ketqua = data_quy_S.append(data_quy_M)
+    # ketqua = ketqua.append(data_quy_E)
+
+    ketqua = pd.concat([df, pd.DataFrame([data_quy_M])], ignore_index=True)
+    ketqua = pd.concat([df, pd.DataFrame([data_quy_E])], ignore_index=True)
     
     plt.figure(figsize=(20, 10))
     sns.barplot(x= 'DATE_M', y= Type_PT, data = ketqua)
